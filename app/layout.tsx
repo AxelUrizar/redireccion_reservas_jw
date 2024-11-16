@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Sistema de Reservas",
+  title: "Reservas JW",
   description: "Sistema de Reservas para las distintas salas del salón del reino.",
   icons: {
     icon: "/favicon.ico"
