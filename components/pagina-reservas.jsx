@@ -23,7 +23,7 @@ export function PaginaReservas() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-background p-4">
       <div className="w-full max-w-md grid grid-cols-1 gap-6">
         <Button 
-          className="w-full h-48 md:h-56 flex flex-col items-center justify-center space-y-4 hover:bg-white hover:text-black hover:border-black hover:border-2 transition-colors duration-300 p-6" 
+          className="w-full h-48 md:h-56 flex flex-col items-center justify-center space-y-4 hover:bg-white hover:text-sky-700 hover:border-sky-700 hover:border-2 transition-colors duration-300 p-6" 
           variant="default"
           onClick={handleAuditorioSuperior}
         >
@@ -31,7 +31,7 @@ export function PaginaReservas() {
           <span className="text-xl text-center">Reservar Auditorio Principal</span>
         </Button>
         <Button 
-          className="w-full h-48 md:h-56 flex flex-col items-center justify-center space-y-4 hover:bg-white hover:text-black hover:border-black hover:border-2 transition-colors duration-300 p-6" 
+          className="w-full h-48 md:h-56 flex flex-col items-center justify-center space-y-4 hover:bg-white hover:text-sky-700 hover:border-sky-700 hover:border-2 transition-colors duration-300 p-6" 
           variant="default"
           onClick={handleBiblioteca}
         >
@@ -39,7 +39,7 @@ export function PaginaReservas() {
           <span className="text-xl text-center">Reservar Sala Ancianos</span>
         </Button>
         <Button 
-          className="w-full h-48 md:h-56 flex flex-col items-center justify-center space-y-4 hover:bg-white hover:text-black hover:border-black hover:border-2 transition-colors duration-300 p-6" 
+          className="w-full h-48 md:h-56 flex flex-col items-center justify-center space-y-4 hover:bg-white hover:text-sky-700 hover:border-sky-700 hover:border-2 transition-colors duration-300 p-6" 
           variant="default"
           onClick={handleAuditorioInferior}
         >
