@@ -1,7 +1,9 @@
 'use client'
 
-import { Button } from "@/components/ui/button"
-import { BookOpen, PanelBottomOpen, PanelTopOpen } from "lucide-react"
+import { BookOpen, PanelBottomOpen, PanelTopOpen, DoorOpen } from "lucide-react"
+import { BotonRedireccion } from "@/components/botonRedireccion"
+import { MiniBotonRedireccion } from "@/components/miniBotonRedireccion"
+import { MaxiBotonRedireccion } from "@/components/maxiBotonRedireccion"
 import { useRouter } from "next/navigation"
 
 export function PaginaReservas() {
@@ -11,42 +13,34 @@ export function PaginaReservas() {
     router.push("/auditorio-superior")
   }
 
-  const handleBiblioteca = () => {
-    router.push("/biblioteca")
-  }
-
   const handleAuditorioInferior = () => {
     router.push("/auditorio-inferior")
   }
 
+  const handleBiblioteca = () => {
+    router.push("/biblioteca")
+  }
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background p-4">
-      <div className="w-full max-w-md grid grid-cols-1 gap-6">
-        <Button 
-          className="w-full h-48 md:h-56 flex flex-col items-center justify-center space-y-4 bg-sky-700 hover:bg-white hover:text-sky-700 hover:border-sky-700 hover:border-2 transition-colors duration-300 p-6" 
-          variant="default"
-          onClick={handleAuditorioSuperior}
-        >
-          <PanelBottomOpen className="w-16 h-16" />
-          <span className="text-xl text-center">Reservar Segunda Sala (Aud. Superior)</span>
-        </Button>
-        <Button 
-          className="w-full h-48 md:h-56 flex flex-col items-center justify-center space-y-4 bg-sky-700 hover:bg-white hover:text-sky-700 hover:border-sky-700 hover:border-2 transition-colors duration-300 p-6" 
-          variant="default"
-          onClick={handleBiblioteca}
-        >
-          <BookOpen className="w-16 h-16" />
-          <span className="text-xl text-center">Reservar Biblioteca</span>
-        </Button>
-        <Button 
-          className="w-full h-48 md:h-56 flex flex-col items-center justify-center space-y-4 bg-sky-700 hover:bg-white hover:text-sky-700 hover:border-sky-700 hover:border-2 transition-colors duration-300 p-6" 
-          variant="default"
-          onClick={handleAuditorioInferior}
-        >
-          <PanelTopOpen className="w-16 h-16" />
-          <span className="text-xl text-center">Reservar Segunda Sala (Aud. Inferior)</span>
-        </Button>
-      </div>
+    <div className="flex flex-col gap-3 items-center justify-center min-h-screen bg-gray-800 p-4 px-6">
+      <h1 className="text-3xl text-center text-white font-bold mb-4">Reservas JW</h1>
+      <ul className="w-full max-w-md grid grid-cols-1 gap-3">
+        <li className="grid grid-cols-3 gap-3">
+          <div className="col-span-2">
+            <BotonRedireccion text="Aud. Superior" handleClick={handleAuditorioSuperior} Icon={PanelBottomOpen} />
+          </div>
+          <MiniBotonRedireccion text="Segunda Sala" handleClick={handleAuditorioSuperior} Icon={DoorOpen} />
+        </li>
+        <li>
+          <MaxiBotonRedireccion text="Biblioteca" handleClick={handleBiblioteca} Icon={BookOpen} />
+        </li>
+        <li className="grid grid-cols-3 gap-3">
+          <div className="col-span-2">
+            <BotonRedireccion text="Aud. Inferior" handleClick={handleAuditorioInferior} Icon={PanelTopOpen} />
+          </div>
+            <MiniBotonRedireccion text="Segunda Sala" handleClick={handleAuditorioInferior} Icon={DoorOpen} />
+        </li>
+      </ul>
     </div>
   )
 }
