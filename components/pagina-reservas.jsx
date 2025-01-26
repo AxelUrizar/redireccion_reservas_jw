@@ -13,8 +13,16 @@ export function PaginaReservas() {
     router.push("/auditorio-superior")
   }
 
+  const handleSalaAuxSuperior = () => {
+    router.push("/sala-auxiliar-superior")
+  }
+
   const handleAuditorioInferior = () => {
     router.push("/auditorio-inferior")
+  }
+
+  const handleSalaAuxInferior = () => {
+    router.push("/sala-auxiliar-inferior")
   }
 
   const handleBiblioteca = () => {
@@ -23,13 +31,12 @@ export function PaginaReservas() {
 
   return (
     <div className="flex flex-col gap-3 items-center justify-center min-h-screen bg-gray-800 p-4 px-6">
-      <h1 className="text-3xl text-center text-white font-bold mb-4">Reservas JW</h1>
       <ul className="w-full max-w-md grid grid-cols-1 gap-3">
         <li className="grid grid-cols-3 gap-3">
           <div className="col-span-2">
             <BotonRedireccion text="Aud. Superior" handleClick={handleAuditorioSuperior} Icon={PanelBottomOpen} />
           </div>
-          <MiniBotonRedireccion text="Segunda Sala" handleClick={handleAuditorioSuperior} Icon={DoorOpen} />
+          <MiniBotonRedireccion text="Segunda Sala" handleClick={handleSalaAuxSuperior} Icon={DoorOpen} />
         </li>
         <li>
           <MaxiBotonRedireccion text="Biblioteca" handleClick={handleBiblioteca} Icon={BookOpen} />
@@ -38,7 +45,7 @@ export function PaginaReservas() {
           <div className="col-span-2">
             <BotonRedireccion text="Aud. Inferior" handleClick={handleAuditorioInferior} Icon={PanelTopOpen} />
           </div>
-            <MiniBotonRedireccion text="Segunda Sala" handleClick={handleAuditorioInferior} Icon={DoorOpen} />
+            <MiniBotonRedireccion text="Segunda Sala" handleClick={handleSalaAuxInferior} Icon={DoorOpen} />
         </li>
       </ul>
     </div>
